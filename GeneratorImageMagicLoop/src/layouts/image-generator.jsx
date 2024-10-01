@@ -59,7 +59,7 @@ export default function Component() {
   
   const getImageUri = async (text) => {
     try {
-      const url = 'generator-images-ui.vercel.app/getImageUri?input=' + encodeURIComponent(text);
+      const url = 'https://generator-images-ui.vercel.app//getImageUri?input=' + encodeURIComponent(text);
 
       const response = await axios.get(url);
       const responseJson = response.data; // Axios ya transforma la respuesta a JSON
@@ -96,7 +96,7 @@ export default function Component() {
     const imageUrl = btoa(url); // Asegúrate de codificar la URL aquí
 
     try {
-      const response = await axios.get(`generator-images-ui.vercel.app/download?url=${imageUrl}`, {
+      const response = await axios.get(`https://generator-images-ui.vercel.app//download?url=${imageUrl}`, {
         responseType: 'blob', // Importante para manejar la respuesta como un blob
       });
 
