@@ -9,6 +9,14 @@ const cors = require("cors");
 const app = express();
 app.use(cors()); // Permite todas las solicitudes CORS
 
+app.get('/health', (req, res) => {
+  try {
+    res.send("Server is running");
+  } catch (error) {
+    res.status(500).send("Error:"+error);
+  }
+})
+
 app.get("/getImageUri", async (req, res) => {
   try {
     const imageUri = await getImageUri(req.query.input);
