@@ -5,7 +5,7 @@ const path = require("path");
 const { getImageUri } = require("./getImageUri");
 const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
-// 
+
 const app = express();
 app.use(cors()); // Permite todas las solicitudes CORS
 
